@@ -49,6 +49,7 @@ export interface BotConfig {
   sellSlippage: number;
   priceCheckInterval: number;
   priceCheckDuration: number;
+  filterActive: boolean;
   filterCheckInterval: number;
   filterCheckDuration: number;
   consecutiveMatchCount: number;
@@ -134,7 +135,7 @@ export class Bot {
       ]);
       const poolKeys: LiquidityPoolKeysV4 = createPoolKeys(accountId, poolState, market);
 
-      if (!this.config.useSnipeList) {
+      if (!this.config.useSnipeList && this.config.filterActive) {
         const match = await this.filterMatch(poolKeys);
 
         if (!match) {

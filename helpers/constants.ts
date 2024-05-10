@@ -51,6 +51,7 @@ export const PRICE_CHECK_DURATION = Number(retrieveEnvVariable('PRICE_CHECK_DURA
 export const SELL_SLIPPAGE = Number(retrieveEnvVariable('SELL_SLIPPAGE', logger));
 
 // Filters
+export const FILTER_ACTIVE = retrieveEnvVariable('FILTER_ACTIVE', logger) === 'true';
 export const FILTER_CHECK_INTERVAL = Number(retrieveEnvVariable('FILTER_CHECK_INTERVAL', logger));
 export const FILTER_CHECK_DURATION = Number(retrieveEnvVariable('FILTER_CHECK_DURATION', logger));
 export const CONSECUTIVE_FILTER_MATCHES = Number(retrieveEnvVariable('CONSECUTIVE_FILTER_MATCHES', logger));
